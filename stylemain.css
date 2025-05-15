@@ -3,6 +3,11 @@
 /* Import Montserrat font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+@import url('https://fonts.cdnfonts.com/css/the-one-jenny-made');
+@import url('https://fonts.cdnfonts.com/css/blanday-swash');
+@import url(https://fonts.bunny.net/css?family=gaegu:300,400,700);
+
 /* CSS Reset & Base Styles */
 * {
   margin: 0;
@@ -14,7 +19,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #FEFDBF; /* Secondary color as base background */
   color: #333;
-  background-image: url(img/heroIMG.png);
+  /* background-image: url(img/heroIMG.png); */
   line-height: 1.6;
 }
 
@@ -50,6 +55,15 @@ a {
 a:hover {
   transform: scale(1.05);
   text-decoration: underline;
+}
+
+/* nav */
+
+.nav-item{
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000; 
+  padding: 0 20px;
 }
 
 /* Hero Section */
@@ -121,3 +135,55 @@ a:hover {
 }
 
 
+
+
+/* polaroid */
+
+#polaroid{
+  padding: 0 485px;
+}
+#image-bg{
+  width: 21.07em;
+  height: 25.29em;
+  background: #ffffff url(https://images.pexels.com/photos/2221357/pexels-photo-2221357.jpeg) center center/cover no-repeat;
+  margin: 20px auto auto 15px;
+  border-top: solid 1.65em #efefef;
+  border-left: solid 1.2em #efefef;
+  border-bottom: solid 5em #efefef;
+  border-right: solid 1.2em #efefef;
+}
+#polaroid-text{
+  font-family: 'Gaegu', handwriting;
+  font-size:1.75em;
+  color: #121212;
+  position:absolute;
+  top:16.25em;
+  left:22.25em;
+}
+
+
+/* About section layout */
+.about-section {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.aboutMe {
+  flex: 1 1 50%;
+}
+
+.images-side {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.img1, .img2, .img3, .img4 {
+  width: 150px;
+  height: 150px;
+  background: #eee;
+  border: 1px solid #ccc;
+}

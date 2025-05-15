@@ -2,16 +2,20 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 25px;
+  border-radius: 10px; 
   display: block;
   min-height: 120px;
 }
 
 .project-card {
+  border-radius: 10px;
+  overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  border-radius: 25px;
-  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-card:hover {
@@ -23,7 +27,7 @@
 .project-modal {
   display: none;
   position: fixed;
-  z-index: 9999;
+  z-index: 2;
   left: 0; top: 0; width: 100vw; height: 100vh;
   background: rgba(0,0,0,0.7);
   align-items: center;
@@ -229,6 +233,19 @@
   }
   .project-modal-content {
     padding: 0.5rem;
+  }
+  /* Responsive: Stack project cards in a single column on mobile */
+  .projects-custom-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(7, 1fr) !important;
+    gap: 1.5rem;
+  }
+  .project-card {
+    grid-column: 1 / 2 !important;
+    grid-row: auto !important;
+    min-height: 220px;
+    height: auto;
   }
 }
 

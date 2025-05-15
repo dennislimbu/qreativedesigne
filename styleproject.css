@@ -176,6 +176,27 @@
   border: 1px dashed #ccc;
 }
 
+/* Desktop: Make modal gallery images smaller to better fit the screen */
+.modal-gallery-img,
+.modal-gallery-placeholder {
+  flex: 1 1 calc(16% - 0.5rem);
+  max-width: calc(16% - 0.5rem);
+  min-width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  background: #eee;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 0.95rem;
+  font-style: italic;
+  border: 1px dashed #ccc;
+}
+
 /* Tablet: 2 per row */
 @media (max-width: 900px) {
   .modal-gallery-img,
@@ -271,3 +292,4 @@
 .slideshow-arrow:hover {
   color: #333;
 }
+

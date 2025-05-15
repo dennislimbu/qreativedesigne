@@ -1,0 +1,197 @@
+/* About Section with Pin Board Texture */
+.about-section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+  margin-top: 7vh;
+  background: 
+    url('https://www.transparenttextures.com/patterns/cork-board.png') repeat,
+    #f7e7b0;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  padding: 2rem 2rem;
+}
+
+.aboutMe {
+  flex: 1 1 50%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fffbe6;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 2rem 1.5rem;
+}
+
+/* Polaroid Grid */
+.images-grid {
+  flex: 1 1 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.img1, .img2, .img3, .img4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Consistent Polaroid Size & Style */
+#polaroid, .polaroid-item {
+  position: relative;
+  width: 15em;
+  height: 18em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.img1 #polaroid, .img1 .polaroid-item { transform: rotate(-12deg); }
+.img2 #polaroid, .img2 .polaroid-item { transform: rotate(8deg); }
+.img3 #polaroid, .img3 .polaroid-item { transform: rotate(-6deg); }
+.img4 #polaroid, .img4 .polaroid-item { transform: rotate(14deg); }
+
+#polaroid:hover, .polaroid-item:hover {
+  z-index: 2;
+  transform: scale(1.5) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+/* Red sticker */
+.red-sticker {
+  position: absolute;
+  top: 1.2em;
+  left: 1.2em;
+  width: 2.5em;
+  height: 2.5em;
+  background: #e53935;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'Gaegu', handwriting;
+  font-size: 1.1em;
+  font-weight: bold;
+  transform: rotate(-15deg);
+  pointer-events: none;
+  user-select: none;
+  border: 2px solid #fff;
+}
+
+/* Polaroid Image */
+#image-bg, .polaroid-item #image-bg {
+  width: 15em;
+  height: 18em;
+  background: #ffffff center center/cover no-repeat;
+  margin: 0;
+  border-top: solid 1.65em #efefef;
+  border-left: solid 1.2em #efefef;
+  border-bottom: solid 5em #efefef;
+  border-right: solid 1.2em #efefef;
+  box-sizing: border-box;
+}
+
+/* Polaroid Text */
+#polaroid-text, .polaroid-item #polaroid-text {
+  font-family: 'Gaegu', handwriting;
+  font-size: 1.75em;
+  color: #121212;
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+/* Responsive Tablet */
+@media (max-width: 991px) {
+  .about-section {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem 0.5rem;
+    min-height: unset;
+    margin-top: 3vh;
+    margin: 0 2rem;
+    gap: 1.5rem;
+  }
+  .aboutMe, .images-grid {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .aboutMe {
+    min-height: 300px;
+    margin-bottom: 1.5rem;
+  }
+  .images-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* Responsive Mobile: Stack Polaroids */
+@media (max-width: 600px) {
+  .images-grid { display: none !important; }
+  .images-stack-mobile { display: flex; justify-content: center; align-items: center; width: 100%; }
+  .polaroid-stack {
+    position: relative;
+    width: 90vw;
+    max-width: 320px;
+    height: 240px;
+    perspective: 1000px;
+  }
+  .polaroid-item {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(0.95) rotate(-5deg);
+    transition: 
+      opacity 0.4s cubic-bezier(.25,.8,.25,1),
+      transform 0.4s cubic-bezier(.25,.8,.25,1);
+    z-index: 1;
+    cursor: pointer;
+    pointer-events: none;
+  }
+  .polaroid-item.active {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    z-index: 2;
+    pointer-events: auto;
+  }
+  /* Remove hover effect on mobile */
+  #polaroid:hover, .polaroid-item:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    z-index: auto !important;
+  }
+  /* Mobile size for polaroids */
+  #polaroid, .polaroid-item,
+  #image-bg, .polaroid-item #image-bg {
+    width: 90vw;
+    max-width: 320px;
+    height: auto;
+  }
+  #image-bg, .polaroid-item #image-bg {
+    height: 300px;
+    width: 250px;
+    min-height: 120px;
+    max-width: 320px;
+    margin-top: -40px;
+  }
+}

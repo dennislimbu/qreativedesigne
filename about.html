@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QrativeDesign</title>
   <link rel="stylesheet" href="stylemain.css" />
+  <link rel="stylesheet" href="styleabout.css" />
   <link rel="stylesheet" href="mouse.css" />
   <script src="script.js" type="module" defer></script>
   <!-- Bootstrap CSS -->
@@ -34,22 +35,73 @@
 
   <!-- Main -->
 
-  <div class="container " style="border: 1px red solid;">
-    <div class="aboutMe" style="border: 1px red solid;">
-        <h1 class="aboutMeTitle" style="border: 1px red solid;" >About Me</h1>
-        <p class="aboutMeText" style="border: 1px red solid;">
-            Hello! I am Quynh-Nhu, a passionate designer and developer. I love creating beautiful and functional designs that enhance user experience. My goal is to bring ideas to life through design and technology.
-        </p>
+  <main class="container about-section d-flex">
+    <div class="aboutMe flex-fill" >
+      <h1 class="aboutMeTitle">About Me</h1>
+      <p class="aboutMeText" >
+        Hello! I am Quynh-Nhu, a passionate designer and developer. I love creating beautiful and functional designs that enhance user experience. My goal is to bring ideas to life through design and technology.
+      </p>
     </div>
-    <div class="img1">
+    <!-- IMG Grid for desktop/tablet -->
+    <div class="images-grid flex-fill">
+      <div class="img1">
         <div id="polaroid">
-            <div id="image-bg">
-            </div>
+          <div class="red-sticker">★</div>
+          <div id="image-bg"></div>
+          <div id="polaroid-text">Polaroid 1</div>
+        </div>
+      </div>
+      <div class="img2">
+        <div id="polaroid">
+          <div class="red-sticker">!</div>
+          <div id="image-bg"></div>
+          <div id="polaroid-text">Polaroid 2</div>
+        </div>
+      </div>
+      <div class="img3">
+        <div id="polaroid">
+          <div class="red-sticker">♥</div>
+          <div id="image-bg"></div>
+          <div id="polaroid-text">Polaroid 3</div>
+        </div>
+      </div>
+      <div class="img4">
+        <div id="polaroid">
+          <div class="red-sticker">✦</div>
+          <div id="image-bg"></div>
+          <div id="polaroid-text">Polaroid 4</div>
+        </div>
+      </div>
     </div>
-    <div class="img2"></div>
-    <div class="img3"></div>
-    <div class="img4"></div>
-</div>
 
+    <!-- IMG Grid for mobile only -->
+    <!-- Polaroid stack for mobile only -->
+    <div class="images-stack-mobile" style="display:none;">
+      <div class="polaroid-stack">
+        <div class="polaroid-item active">
+          <div class="red-sticker">★</div>
+          <div id="image-bg"></div>
+          <div id="polaroid-text">Polaroid 1</div>
+        </div>
+        <div class="polaroid-item">
+          <div class="red-sticker">!</div>
+          <div id="image-bg"></div>
+          <div id="polaroid-text">Polaroid 2</div>
+        </div>
+        <div class="polaroid-item">
+          <div class="red-sticker">♥</div>
+          <div id="image-bg"></div>
+          <div id="polaroid-text">Polaroid 3</div>
+        </div>
+        <div class="polaroid-item">
+          <div class="red-sticker">✦</div>
+          <div id="image-bg"></div>
+          <div id="polaroid-text">Polaroid 4</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="scriptabout.js"></script>
 </body>
 </html>

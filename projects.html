@@ -42,18 +42,28 @@
         <div class="d-flex flex-row gap-4">
           <div class="project-card flex-fill"
             onclick="openProjectModal(
-              'Project 1',
-              'https://placehold.co/600x400?text=Project+1',
-              'This is more information about Project 1.',
-              [
-                'https://placehold.co/150x100?text=Gallery+1',
-                'https://placehold.co/150x100?text=Gallery+2',
-                'https://placehold.co/150x100?text=Gallery+3'
-              ]
+              'Packaging and Branding Celestial Moon',
+              './img/Celestial Moon/ProjectIMG_1.png',
+              'At Celestial Moon, we believe in the power of tradition to bring people together—across generations, cultures, and continents. Designed as a bridge between East and West, each mooncake is crafted with care and elegance, blending traditional symbolism with contemporary design.',
+                [
+                'img/Celestial Moon/ProjectIMG_1_slideshow1.png',
+                'img/Celestial Moon/ProjectIMG_1_slideshow2.png',
+                'img/Celestial Moon/ProjectIMG_1_slideshow3.png',
+                'img/Celestial Moon/ProjectIMG_1_slideshow4.png',
+                'img/Celestial Moon/ProjectIMG_1_slideshow5.png',
+                'img/Celestial Moon/ProjectIMG_1_slideshow6.png',
+                'img/Celestial Moon/ProjectIMG_1_slideshow7.png',
+                'img/Celestial Moon/ProjectIMG_1_slideshow8.png',
+                'img/Celestial Moon/ProjectIMG_1_slideshow9.png',
+                'img/Celestial Moon/ProjectIMG_1_slideshow10.png',
+                'img/Celestial Moon/ProjectIMG_1_slideshow11.png'
+                ]
             )">
-            <img src="https://placehold.co/300x180?text=Project+1" alt="Project 1">
-            <div class="img-alt-text">Project 1</div>
+            <img src="./img/Celestial Moon/ProjectIMG_1.png" alt="Packaging and Branding Celestial Moon">
+            <div class="img-alt-text">Packaging and Branding Celestial Moon</div>
           </div>
+
+
           <div class="project-card flex-fill"
             onclick="openProjectModal(
               'Project 2',
@@ -64,8 +74,8 @@
                 'https://placehold.co/150x100?text=Gallery+2'
               ]
             )">
-            <img src="https://placehold.co/300x180?text=Project+2" alt="Project 2">
-            <div class="img-alt-text">Project 2</div>
+            <img src="./img/Typography/ProjectIMG_2.png" alt="Typography">
+            <div class="img-alt-text">Typography</div>
           </div>
         </div>
         <div class="d-flex flex-row gap-4">
@@ -102,57 +112,66 @@
   <div id="projectModal" class="project-modal">
     <div class="project-modal-content">
       <span class="project-modal-close" onclick="closeProjectModal()">&times;</span>
-      <div class="d-flex flex-row w-100 h-80 gap-4">
-        <!-- Project Main Image (LEFT) -->
+      <div class="d-flex flex-row w-100 h-80 gap-4 align-items-center">
+        <!-- Slideshow arrows and image -->
+        <button id="slidePrev" class="slideshow-arrow" onclick="changeSlide(-1)" aria-label="Previous image">&#8592;</button>
         <div class="modal-main-img d-flex align-items-center justify-content-center" style="flex:1; min-width:220px;">
           <img id="modalImg" src="" alt="" />
         </div>
+        <button id="slideNext" class="slideshow-arrow" onclick="changeSlide(1)" aria-label="Next image">&#8594;</button>
         <!-- Project Title & Content (RIGHT) -->
         <div class="modal-main-content d-flex flex-column justify-content-center" style="flex:1;">
           <h2 id="modalTitle"></h2>
           <p id="modalDesc"></p>
-          <!-- You can add more fields here if needed -->
         </div>
       </div>
-      <!-- Image Gallery (BELOW) -->
-      <div id="modalGallery" class="d-flex flex-row flex-wrap gap-3 mt-4 w-100 justify-content-center">
-        <!-- Gallery images will be injected here -->
-      </div>
+      <div id="slideCount" style="margin-top:1rem; font-size:0.95rem; color:#888;"></div>
     </div>
   </div>
 </section>
 
 <script>
-// Call this function with your project data
+let currentSlide = 0;
+let slideImages = [];
+
 function openProjectModal(title, imgSrc, desc, gallery=[]) {
   document.getElementById('projectModal').style.display = 'flex';
   document.getElementById('modalTitle').textContent = title;
-  document.getElementById('modalImg').src = imgSrc;
-  document.getElementById('modalImg').alt = title;
   document.getElementById('modalDesc').textContent = desc;
 
-  // Update gallery images
-  const galleryDiv = document.getElementById('modalGallery');
-  galleryDiv.innerHTML = '';
-  // Add gallery images here (array of URLs)
-  gallery.forEach(src => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = title + ' gallery image';
-    img.className = 'modal-gallery-img';
-    galleryDiv.appendChild(img);
-  });
+  // Prepare slideshow images (main image + gallery)
+  slideImages = [imgSrc, ...gallery];
+  currentSlide = 0;
+  showSlide(currentSlide);
 
-  // Fill up to 8 slots with placeholders if needed
-  const totalSlots = 8;
-  let current = gallery.length;
-  while (current < totalSlots) {
-    const placeholder = document.createElement('div');
-    placeholder.className = 'modal-gallery-placeholder';
-    placeholder.textContent = 'No Image';
-    galleryDiv.appendChild(placeholder);
-    current++;
-  }
+  // Show/hide arrows if only one image
+  document.getElementById('slidePrev').style.display = slideImages.length > 1 ? 'block' : 'none';
+  document.getElementById('slideNext').style.display = slideImages.length > 1 ? 'block' : 'none';
+}
+
+// Add this to your showSlide function
+function showSlide(n) {
+  if (slideImages.length === 0) return;
+  if (n < 0) currentSlide = slideImages.length - 1;
+  else if (n >= slideImages.length) currentSlide = 0;
+  else currentSlide = n;
+
+  const img = document.getElementById('modalImg');
+  img.classList.add('slide-out');
+  setTimeout(() => {
+    img.src = slideImages[currentSlide];
+    img.alt = "Project image " + (currentSlide + 1);
+    img.classList.remove('slide-out');
+    img.classList.add('slide-in');
+    setTimeout(() => img.classList.remove('slide-in'), 400);
+  }, 400);
+
+  document.getElementById('slideCount').textContent =
+    (currentSlide + 1) + " / " + slideImages.length;
+}
+
+function changeSlide(dir) {
+  showSlide(currentSlide + dir);
 }
 
 function closeProjectModal() {
@@ -164,9 +183,6 @@ window.onclick = function(event) {
     closeProjectModal();
   }
 }
-
-// Example usage for a project card:
-// <div class="project-card" onclick="openProjectModal('Project 1', 'https://placehold.co/600x400?text=Project+1', 'This is more information about Project 1.', ['https://placehold.co/150x100?text=Gallery+1','https://placehold.co/150x100?text=Gallery+2'])">
 </script>
 
   <div class="footer">3</div>

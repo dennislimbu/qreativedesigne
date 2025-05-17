@@ -25,45 +25,56 @@ body {
 
 /* Typography */
 h1 {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 2.5rem;
   font-weight: 700; /* Bold */
   color: #54C7E0; /* Primary color */
   margin-bottom: 1rem;
+  letter-spacing: 0.02em;
 }
 
 h2 {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 2rem;
-  font-weight: 400; /* Regular */
+  font-weight: 500; /* Medium for better contrast */
   color: #54C7E0;
   margin-bottom: 0.75rem;
+  letter-spacing: 0.01em;
 }
 
 p {
-  font-size: 1rem;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
   color: #333;
   margin-bottom: 1rem;
+  line-height: 1.7;
 }
 
 /* Links */
 a {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   color: #54C7E0; /* Primary color */
   text-decoration: none;
-  transition: transform 0.2s ease, text-decoration 0.2s ease;
+  transition: transform 0.2s ease, text-decoration 0.2s ease, color 0.2s;
   display: inline-block;
+  font-weight: 500;
 }
 
 a:hover {
   transform: scale(1.05);
   text-decoration: underline;
+  color: #333;
 }
 
 /* nav */
 
 .nav-item{
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: #000; 
   padding: 0 20px;
+  letter-spacing: 0.01em;
 }
 
 /* Hero Section */

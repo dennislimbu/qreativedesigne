@@ -1,40 +1,39 @@
-.project-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px; 
-  display: block;
-  min-height: 120px;
-}
-
+/* Project Card Styles */
 .project-card {
   border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   display: flex;
   flex-direction: column;
   height: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
+.project-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
 .project-card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   z-index: 2;
 }
 
+/* Modal Styles */
 .project-modal {
   display: none;
   position: fixed;
   z-index: 2;
-  left: 0; top: 0; width: 100vw; height: 100vh;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
   background: rgba(0,0,0,0.7);
   align-items: center;
   justify-content: center;
 }
-
-/* Make modal content fill more space and center content */
 .project-modal-content {
   background: #fff;
   border-radius: 25px;
@@ -47,12 +46,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center vertically */
+  justify-content: center;
   position: relative;
   overflow-y: auto;
 }
+.project-modal-close {
+  position: absolute;
+  top: 1rem; right: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+}
 
-/* Center and enlarge the main row */
+/* Modal Main Content */
 .d-flex.flex-row.w-100.h-80.gap-4,
 .d-flex.flex-row.w-100.h-100.gap-4 {
   width: 100%;
@@ -63,8 +70,6 @@
   justify-content: center;
   gap: 3rem;
 }
-
-/* Make image and text take up more space */
 .modal-main-img,
 .modal-main-content {
   flex: 1 1 50%;
@@ -74,8 +79,6 @@
   align-items: center;
   justify-content: center;
 }
-
-/* Enlarge the project image */
 .modal-main-img img {
   width: 100%;
   max-width: 600px;
@@ -86,8 +89,6 @@
   transition: opacity 0.5s cubic-bezier(.4,0,.2,1), transform 0.5s cubic-bezier(.4,0,.2,1);
   opacity: 1;
 }
-
-/* Slideshow animation: fade effect */
 .modal-main-img img.slide-out {
   opacity: 0;
   transform: scale(0.98);
@@ -98,30 +99,27 @@
   transform: scale(1);
   transition: opacity 0.4s, transform 0.4s;
 }
-
-/* Enlarge and center the text area */
 .modal-main-content {
   flex: 1 1 50%;
   max-width: 700px;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
-
 .modal-main-content h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
   word-break: break-word;
 }
-
 .modal-main-content p {
   font-size: 1.2rem;
   line-height: 1.7;
   word-break: break-word;
 }
 
+/* Modal Gallery */
 #modalGallery {
   width: 100%;
   display: flex;
@@ -137,46 +135,6 @@
   align-items: flex-start;
   overflow-y: auto;
 }
-
-/* Responsive gallery grid */
-#modalGallery {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem 0;
-  border: 1px solid #ddd;
-  background: #fafafa;
-  min-height: 160px;
-  max-height: 400px;
-  box-sizing: border-box;
-  justify-content: flex-start;
-  align-items: flex-start;
-  overflow-y: auto;
-}
-
-/* Add more placeholder styling for empty gallery slots */
-.modal-gallery-img,
-.modal-gallery-placeholder {
-  flex: 1 1 calc(25% - 1rem);
-  max-width: calc(25% - 1rem);
-  min-width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  background: #eee;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #aaa;
-  font-size: 1.1rem;
-  font-style: italic;
-  border: 1px dashed #ccc;
-}
-
-/* Desktop: Make modal gallery images smaller to better fit the screen */
 .modal-gallery-img,
 .modal-gallery-placeholder {
   flex: 1 1 calc(16% - 0.5rem);
@@ -197,7 +155,22 @@
   border: 1px dashed #ccc;
 }
 
-/* Tablet: 2 per row */
+/* Slideshow Arrow */
+.slideshow-arrow {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #888;
+  cursor: pointer;
+  padding: 0 1rem;
+  transition: color 0.2s;
+  user-select: none;
+}
+.slideshow-arrow:hover {
+  color: #333;
+}
+
+/* Responsive Styles */
 @media (max-width: 900px) {
   .modal-gallery-img,
   .modal-gallery-placeholder {
@@ -221,8 +194,6 @@
     min-height: 300px;
   }
 }
-
-/* Mobile: 1 per row, stack modal content */
 @media (max-width: 600px) {
   .d-flex.flex-row.w-100.h-80.gap-4,
   .d-flex.flex-row.w-100.h-100.gap-4 {
@@ -255,7 +226,6 @@
   .project-modal-content {
     padding: 0.5rem;
   }
-  /* Responsive: Stack project cards in a single column on mobile */
   .projects-custom-grid {
     display: grid !important;
     grid-template-columns: 1fr !important;
@@ -270,26 +240,59 @@
   }
 }
 
-.project-modal-close {
-  position: absolute;
-  top: 1rem; right: 1.5rem;
-  font-size: 2rem;
-  color: #333;
-  cursor: pointer;
-  font-weight: bold;
+/* Brand Identity Section */
+.brandIdentity_container > h1 {
+  margin-bottom: 3rem !important;
 }
 
-.slideshow-arrow {
-  background: none;
-  border: none;
-  font-size: 2.5rem;
-  color: #888;
-  cursor: pointer;
-  padding: 0 1rem;
-  transition: color 0.2s;
-  user-select: none;
-}
-.slideshow-arrow:hover {
-  color: #333;
+.brandIdentity_container .col-md-5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
+/* Brand Vision & Mission spacing */
+.brandIdentity_container .col-md-5 .mb-4,
+.brandIdentity_container .col-md-5 > div:not(.mb-4) {
+  margin-bottom: 2.5rem !important;
+}
+
+/* h3 top left, p centered and styled */
+.brandIdentity_container .col-md-5 h3 {
+  text-align: left;
+  color: #8F312F;
+  margin-bottom: 0.5rem;
+}
+.brandIdentity_container .col-md-5 p {
+  text-align: center;
+  font-size: 1rem;
+  color: #8F312F;
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+}
+.brandIdentity_container .col-md-5 > div:last-child p {
+  margin-bottom: 0;
+}
+
+/* Brand Identity Right Flex Utility */
+.brand-identity-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  min-height: 100%;
+}
+.brand-identity-right .row {
+  flex-grow: 1;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Utility: Make columns fill height */
+.col-md-6, .col-md-5 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

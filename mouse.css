@@ -1,13 +1,13 @@
 body {
-    color: #F4F5E1;
-    background-color: #F4F5E1 !important;
+    color: #FEFDBF;
+    background-color: #54C7E0 !important;
 }
 
 .blob {
     width: 650px;
     height: 650px;
     border-radius: 100%;
-    background-image: linear-gradient(#74D0F0 50%, #F4F5E1);
+    background-image: linear-gradient(#FEFDBF 50%, #FEFDBF);
     filter: blur(250px);
     transition: all 450ms ease-out;
     position: fixed;

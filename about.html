@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QreativeDesign</title>
   <link rel="stylesheet" href="stylemain.css" />
-  <link rel="stylesheet" href="mouse.css" />
   <link rel="stylesheet" href="styleabout.css" />
   <script src="script.js" type="module" defer></script>
   <!-- Bootstrap CSS -->
@@ -28,7 +27,7 @@
           <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
             <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Me</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -37,9 +36,10 @@
 
   <!-- Main -->
 
-  <main class="container about-section d-flex">
+  <main class="container about-section d-flex" style="min-height:100vh; height:100vh;">
     <div class="aboutMe flex-fill sticky-note" style="position:relative;">
-<div class="pushpin tilted" style="position:absolute; top:-32px; left:20%; transform:translateX(-50%) rotate(9deg); z-index:20;">        <div class="pinhead"></div>
+      <div class="pushpin tilted" style="position:absolute; top:-32px; left:20%; transform:translateX(-50%) rotate(9deg); z-index:20;">
+        <div class="pinhead"></div>
         <div class="pinbase"></div>
         <div class="pinshaft"></div>
         <div class="pinpoint"></div>
@@ -55,7 +55,7 @@
         </a>
       </p>      
     </div>
-    <!-- IMG Grid for desktop/tablet -->
+  <!-- IMG Grid for desktop/tablet -->
     <div class="images-grid flex-fill" style="margin-left: -10px;">
       <div class="img1">
         <div id="polaroid">
@@ -99,8 +99,8 @@
       </div>
     </div>
 
-    <!-- IMG Grid for mobile only -->
-    <!-- Polaroid stack for mobile only -->
+  <!-- IMG Grid for mobile only -->
+  <!-- Polaroid stack for mobile only -->
     <div class="images-stack-mobile" style="display:none;">
       <div class="polaroid-stack">
         <div class="polaroid-item active">

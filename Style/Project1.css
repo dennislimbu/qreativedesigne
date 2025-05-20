@@ -1,0 +1,25 @@
+/* =========================
+   Override text color globally
+   ========================= */
+body,
+h1, h2, h3, h4, h5, h6,
+p, li, ul, ol, label, div, .fw-bold, .display-5 {
+  color: #ae2226 !important;
+}
+
+/* Reduce the size of h1 headings */
+h1 {
+  font-size: 2rem !important;
+}
+
+/* Make images crop to a square shape */
+.square-crop {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: 100% 0;
+  background: #fafafa;
+  border-radius: 0.5rem;
+  display: block;
+}

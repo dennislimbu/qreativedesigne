@@ -9,13 +9,13 @@ body {
     border-radius: 100%;
     background-image: linear-gradient(#FEFDBF);
     filter: blur(250px);
-    transition: all 450ms ease-out;
     position: fixed;
     pointer-events: none;
     left: 0;
     top: 0;
     transform: translate(calc(-50% + 15px), -50%);
     z-index: -1;
+    will-change: transform;
 }
 
 .container {

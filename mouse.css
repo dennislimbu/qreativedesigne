@@ -7,7 +7,7 @@ body {
     width: 650px;
     height: 650px;
     border-radius: 100%;
-    background-image: linear-gradient(#FEFDBF 50%, #FEFDBF);
+    background-image: linear-gradient(#FEFDBF);
     filter: blur(250px);
     transition: all 450ms ease-out;
     position: fixed;

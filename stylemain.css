@@ -17,9 +17,8 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #FEFDBF; /* Secondary color as base background */
+  background-color: #FEFDBF;
   color: #333;
-  /* background-image: url(img/heroIMG.png); */
   line-height: 1.6;
 }
 
@@ -75,6 +74,10 @@ a:hover {
   color: #000; 
   padding: 0 20px;
   letter-spacing: 0.01em;
+}
+
+.nav-link {
+  color: #000 !important;
 }
 
 /* Hero Section */

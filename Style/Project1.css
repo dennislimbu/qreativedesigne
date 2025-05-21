@@ -4,7 +4,7 @@
 body,
 h1, h2, h3, h4, h5, h6,
 p, li, ul, ol, label, div, .fw-bold, .display-5 {
-  color: #ae2226 !important;
+  color: #000 !important;
 }
 
 /* Reduce the size of h1 headings */

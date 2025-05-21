@@ -495,3 +495,26 @@
     filter: none !important;
   }
 }
+
+/* =========================
+   Make Logo Mark images square and responsive on mobile
+   ========================= */
+@media (max-width: 600px) {
+  .row.mb-3 .col-md-6.position-relative.mb-3 img[alt="Logo Mark"] {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 320px !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px !important;
+  }
+  .row.mb-3 .col-md-6.position-relative.mb-3 span {
+    left: 12px !important;
+    top: 8px !important;
+    font-size: 1.1rem !important;
+    padding: 0.3rem 0.8rem !important;
+  }
+}

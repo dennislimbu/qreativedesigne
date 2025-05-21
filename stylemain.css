@@ -148,4 +148,13 @@ a:hover {
   color: #89D6F7;
 }
 
+/* Increase size for .navbar-brand */
+.navbar-brand {
+  font-size: 2.5rem !important;
+}
+
+.navbar-brand img {
+  height: 48px !important;
+}
+
 

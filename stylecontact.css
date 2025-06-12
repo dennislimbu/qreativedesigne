@@ -1,0 +1,84 @@
+body, html {
+  min-height: 100vh;
+  height: 100vh;
+}
+
+.contact-main {
+  flex: 1 0 auto;
+  min-height: 80vh;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+}
+
+.contact-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-desc {
+  font-size: 1.2rem;
+  max-width: 500px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-email {
+  font-size: 1.3rem;
+  color: #000;
+  text-decoration: underline;
+  font-weight: 600;
+  word-break: break-all;
+  text-align: center;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* Ensure footer is always at the bottom on all screen sizes */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100vh;
+}
+.contact-main {
+  flex: 1 0 auto;
+}
+
+/* Footer always at the bottom */
+footer.bg-light {
+  margin-top: auto;
+  width: 100%;
+  position: static;
+  height: auto;
+}
+
+/* Responsive: Adjust for mobile if needed */
+@media (max-width: 600px) {
+  html, body {
+    height: 100%;
+    min-height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100vh;
+  }
+  .contact-main {
+    flex: 1 0 auto;
+    min-height: 0;
+    height: auto;
+    padding: 2rem 1rem 1rem 1rem;
+    justify-content: center;
+  }
+  footer.bg-light {
+    margin-top: auto;
+    position: static;
+    height: auto;
+  }
+}
+
+.form-check.mb-3.d-flex.flex-row.gap-2.w-100 {
+  padding-left: 0 !important;
+}

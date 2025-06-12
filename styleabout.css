@@ -305,4 +305,8 @@
     max-width: 320px;
     margin-top: -40px;
   }
+  .about-section {
+    border-radius: 0 !important;
+    
+  }
 }

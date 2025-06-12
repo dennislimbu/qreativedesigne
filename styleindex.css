@@ -14,20 +14,20 @@ main.container.position-relative {
   transition: all 0.3s;
 }
 
-/* Stickers default (desktop/laptop) */
+/* Stickers default (desktop/laptop/tablet) */
 .sticker-bow-red {
   position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 70px;
+  top: 30%;
+  right: 25%;
+  width: 120px;
   z-index: 20;
   transform: rotate(15deg);
 }
 .sticker-bow {
   position: absolute;
-  bottom: 24px;
-  left: 24px;
-  width: 70px;
+  bottom: 30%;
+  left: 18%;
+  width: 120px;
   z-index: 20;
   transform: rotate(-15deg);
 }
@@ -35,89 +35,136 @@ main.container.position-relative {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 100px;
-  width: 80px;
+  bottom: 15%;
+  width: 160px;
   z-index: 15;
 }
+
 .sticker-stamp {
   position: absolute;
   top: -30px;
   right: -30px;
-  width: 60px;
+  width: 80px;
   z-index: 30;
 }
 
 /* Polaroid positions for desktop/laptop */
 .polaroid-item.top-left {
-  top: 20%;
-  left: 10rem;
+  position: absolute;
+  top: 25%;
+  left: 2rem;
   width: 160px;
   height: 200px;
+  z-index: 10;
+  transform: rotate(-12deg);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 .polaroid-item.bottom-right {
-  bottom: 20%;
-  right: 12rem;
+  position: absolute;
+  bottom: 25%;
+  right: 2rem;
   width: 160px;
   height: 200px;
+  z-index: 10;
+  transform: rotate(10deg);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 /* Responsive adjustments for tablets (iPad) */
 @media (max-width: 1024px) {
-  .polaroid-item.top-left {
-    top: 10%;
-    left: 2rem;
-    width: 120px;
-    height: 150px;
+  html, body {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden; /* Prevent scrolling */
   }
-  .polaroid-item.bottom-right {
-    bottom: 10%;
-    right: 2rem;
-    width: 120px;
-    height: 150px;
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100vh;
   }
+  main.container.position-relative {
+    min-height: 0;
+    height: 100vh;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  /* Hide only the bottom-right polaroid and sticker-stamp on tablet */
+  .polaroid-item.bottom-right,
+  .sticker-stamp {
+    display: none !important;
+  }
+  /* Show the top-left polaroid */
+.polaroid-item.top-left {
+  display: block !important;
+  position: absolute !important;
+  top: 15% !important;
+  left: 2rem !important;
+  z-index: 10;
+}
+  /* Optionally reduce sticker sizes for better fit */
   .sticker-bow-red,
   .sticker-bow {
-    width: 45px;
+    width: 120px;
   }
+
   .sticker-miffy {
-    width: 50px;
-    bottom: 70px;
+    width: 100px;
+    bottom: 20%;
+    width: 140px;
   }
-  .sticker-stamp {
-    width: 35px;
-    top: -20px;
-    right: -20px;
+  .content-parent,
+  .content-parent .content {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  h1, .content h1 {
+    font-size: 3rem !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  footer.bg-light {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }
 
 /* Responsive adjustments for mobile */
 @media (max-width: 600px) {
-  main.container.position-relative {
-    min-height: 60vh;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  html, body {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden; /* Prevent scrolling */
   }
-
-  .sticker-stamp,
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100vh;
+  }
+  main.container.position-relative {
+    min-height: 0;
+    height: 100vh;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  /* Hide non-essential elements for a single-screen experience */
   .polaroid-item.top-left,
-  .polaroid-item.bottom-right {
+  .polaroid-item.bottom-right,
+  .sticker-bow-red,
+  .sticker-bow,
+  .sticker-stamp {
     display: none !important;
   }
-  .sticker-bow-red {
-    top: 8px;
-    right: 8px;
-    width: 28px;
-  }
-  .sticker-bow {
-    bottom: 8px;
-    left: 100px;
-    width: 28px;
-  }
   .sticker-miffy {
-    width:100px;
-    bottom: 20vh;
+    width: 80px;
+    bottom: 20%;
   }
-
   .content-parent,
   .content-parent .content {
     width: 100%;
@@ -125,23 +172,13 @@ main.container.position-relative {
   }
   h1, .content h1 {
     font-size: 1.5rem !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
-  .sticker-bow-red, .sticker-bow {
-    width: 28px;
-    top: 8px;
-    right: 8px;
-    left: 8px;
-    bottom: 8px;
-  }
-  .polaroid-item,
-  .bottom-polaroid {
-    width: 110px !important;
-    height: 140px !important;
-  }
-  .polaroid-carousel-wrapper {
-    width: 220px;
-    max-width: 98vw;
-    bottom: 2vh;
+  footer.bg-light {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }
 

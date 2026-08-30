@@ -1,0 +1,405 @@
+.about-page {
+  position: relative;
+  min-height: calc(100vh - 120px);
+  overflow: hidden;
+  padding: 5rem 1.5rem 7rem;
+  background: #ffffff;
+}
+
+.about-layout {
+  position: relative;
+  z-index: 2;
+
+  width: min(1150px, 94%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 2rem;
+
+  align-items: center;
+}
+
+
+/* =========================
+   STICKY NOTE
+========================= */
+
+.about-note {
+  position: relative;
+
+  padding: 4rem 3rem 3rem;
+
+  background: #fff4ae;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.12);
+
+  transform: rotate(-2deg);
+
+  min-height: 440px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-eyebrow {
+  margin: 0 0 0.7rem;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.about-note h1 {
+  margin: 0 0 2rem;
+
+  font-size: clamp(3rem, 6vw, 5rem);
+
+  font-weight: 800;
+  line-height: 0.95;
+
+  letter-spacing: -0.05em;
+}
+
+.about-note p {
+  margin: 0 0 1.2rem;
+
+  max-width: 450px;
+
+  font-size: 1rem;
+  line-height: 1.7;
+
+  color: #333;
+}
+
+.about-intro {
+  font-weight: 700;
+  font-size: 1.15rem !important;
+}
+
+.about-email {
+  width: fit-content;
+
+  margin-top: 0.6rem;
+
+  color: #111;
+
+  font-weight: 600;
+
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+
+/* =========================
+   PUSH PIN
+========================= */
+
+.pushpin {
+  position: absolute;
+
+  top: -32px;
+  left: 22%;
+
+  width: 35px;
+  height: 70px;
+
+  transform:
+    translateX(-50%)
+    rotate(9deg);
+
+  z-index: 5;
+}
+
+.pinhead {
+  position: absolute;
+
+  top: 0;
+  left: 3px;
+
+  width: 29px;
+  height: 29px;
+
+  border-radius: 50%;
+
+  background: #d63c32;
+
+  box-shadow:
+    0 6px 8px rgba(0, 0, 0, 0.22);
+}
+
+.pinbase {
+  position: absolute;
+
+  top: 22px;
+  left: 10px;
+
+  width: 15px;
+  height: 17px;
+
+  border-radius: 4px;
+
+  background: #a6221a;
+}
+
+.pinshaft {
+  position: absolute;
+
+  top: 35px;
+  left: 16px;
+
+  width: 3px;
+  height: 26px;
+
+  background: #777;
+}
+
+.pinpoint {
+  position: absolute;
+
+  top: 59px;
+  left: 14px;
+
+  width: 0;
+  height: 0;
+
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 8px solid #777;
+}
+
+
+/* =========================
+   PHOTO GRID
+========================= */
+
+.about-photo-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 1.5rem;
+
+  align-items: center;
+}
+
+.about-polaroid {
+  position: relative;
+
+  margin: 0;
+
+  padding: 12px 12px 40px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-polaroid:hover {
+  z-index: 10;
+
+  box-shadow:
+    0 28px 60px rgba(0, 0, 0, 0.2);
+}
+
+.about-image-wrap {
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  background: #eee;
+}
+
+.about-image-wrap img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.about-polaroid figcaption {
+  margin-top: 0.9rem;
+
+  text-align: center;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  color: #222;
+}
+
+.about-sticker {
+  position: absolute;
+
+  top: -13px;
+  right: 15px;
+
+  z-index: 3;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #d73b34;
+
+  color: #fff4ae;
+
+  font-size: 1.1rem;
+  font-weight: 800;
+
+  transform: rotate(10deg);
+}
+
+
+/* Individual rotations */
+
+.about-photo-one {
+  transform: rotate(-6deg);
+}
+
+.about-photo-one:hover {
+  transform: rotate(-3deg) scale(1.03);
+}
+
+.about-photo-two {
+  transform: rotate(5deg) translateY(1rem);
+}
+
+.about-photo-two:hover {
+  transform: rotate(2deg) translateY(1rem) scale(1.03);
+}
+
+.about-photo-three {
+  transform: rotate(4deg) translateX(1rem);
+}
+
+.about-photo-three:hover {
+  transform: rotate(1deg) translateX(1rem) scale(1.03);
+}
+
+.about-photo-four {
+  transform: rotate(-5deg) translateY(1.5rem);
+}
+
+.about-photo-four:hover {
+  transform: rotate(-2deg) translateY(1.5rem) scale(1.03);
+}
+
+
+/* =========================
+   BACKGROUND BLOB
+========================= */
+
+.about-blob {
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -180px;
+  top: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(89, 194, 216, 0.15);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+
+    max-width: 760px;
+  }
+
+  .about-note {
+    min-height: auto;
+  }
+
+  .about-photo-grid {
+    margin-top: 2rem;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .about-page {
+    padding:
+      4rem 1rem
+      5rem;
+  }
+
+  .about-layout {
+    width: 100%;
+  }
+
+  .about-note {
+    padding:
+      3.5rem
+      1.8rem
+      2.5rem;
+
+    transform: rotate(-1deg);
+  }
+
+  .about-photo-grid {
+    grid-template-columns: 1fr;
+
+    gap: 2.5rem;
+
+    width: min(330px, 90%);
+    margin:
+      3rem auto
+      0;
+  }
+
+  .about-photo-one,
+  .about-photo-two,
+  .about-photo-three,
+  .about-photo-four {
+    transform: none;
+  }
+
+  .about-photo-one {
+    transform: rotate(-4deg);
+  }
+
+  .about-photo-two {
+    transform: rotate(3deg);
+  }
+
+  .about-photo-three {
+    transform: rotate(-2deg);
+  }
+
+  .about-photo-four {
+    transform: rotate(4deg);
+  }
+}

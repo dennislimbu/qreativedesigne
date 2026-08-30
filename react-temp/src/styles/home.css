@@ -1,0 +1,263 @@
+/* =========================================
+   HOME PAGE
+========================================= */
+
+.minimal-home {
+  /* Fit between navbar and footer */
+  height: calc(100vh - 90px);
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  padding: 1rem 2rem;
+
+  background-color: #f7f5ef;
+
+  /* Very subtle paper texture */
+  background-image:
+    radial-gradient(
+      rgba(0, 0, 0, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 5px 5px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.home-hero-minimal {
+  width: min(1100px, 94%);
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   TITLE GROUP
+========================================= */
+
+.home-title-wrap {
+  position: relative;
+
+  width: fit-content;
+
+  transform: translateY(-10px);
+}
+
+
+/* "Welcome to my" */
+
+.home-intro {
+  margin: 0 0 0.25rem 0;
+
+  font-size: clamp(
+    1rem,
+    1.4vw,
+    1.35rem
+  );
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #111;
+}
+
+
+/* =========================================
+   LARGE PORTFOLIO TITLE
+========================================= */
+
+.home-title-wrap h1 {
+  margin: 0;
+
+  font-size: clamp(
+    6rem,
+    12vw,
+    11rem
+  );
+
+  font-weight: 900;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.07em;
+
+  color: #000;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   CATEGORY TEXT
+========================================= */
+
+.home-categories {
+  position: absolute;
+
+  right: 0;
+  bottom: -3.2rem;
+
+  margin: 0;
+
+  font-size: clamp(
+    0.7rem,
+    0.9vw,
+    0.9rem
+  );
+
+  font-weight: 400;
+
+  line-height: 1.15;
+
+  text-align: center;
+
+  color: #111;
+}
+
+
+/* =========================================
+   LARGE SCREENS
+========================================= */
+
+@media (min-width: 1400px) {
+
+  .home-title-wrap h1 {
+    font-size: 11rem;
+  }
+
+  .home-intro {
+    font-size: 1.3rem;
+  }
+
+  .home-categories {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .home-title-wrap h1 {
+    font-size: clamp(
+      5.5rem,
+      12vw,
+      9rem
+    );
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .minimal-home {
+    padding: 1rem 1.5rem;
+  }
+
+  .home-title-wrap h1 {
+    font-size: clamp(
+      5rem,
+      15vw,
+      8rem
+    );
+  }
+
+  .home-intro {
+    font-size: 1rem;
+  }
+
+  .home-categories {
+    right: 0;
+    bottom: -3rem;
+
+    font-size: 0.75rem;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .minimal-home {
+    height: calc(100vh - 80px);
+
+    padding: 1rem;
+  }
+
+  .home-title-wrap {
+    width: 100%;
+
+    transform: translateY(-15px);
+  }
+
+  .home-intro {
+    margin-bottom: 0.4rem;
+
+    font-size: 0.95rem;
+  }
+
+  .home-title-wrap h1 {
+    /*
+      Keeps Portfolio large while preventing
+      it from going outside the screen.
+    */
+    font-size: clamp(
+      4rem,
+      19vw,
+      6.5rem
+    );
+
+    white-space: normal;
+
+    line-height: 0.88;
+  }
+
+  .home-categories {
+    position: static;
+
+    margin-top: 1rem;
+
+    font-size: 0.7rem;
+
+    text-align: right;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .home-title-wrap h1 {
+    font-size: 18vw;
+  }
+
+  .home-intro {
+    font-size: 0.85rem;
+  }
+}

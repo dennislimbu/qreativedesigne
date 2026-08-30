@@ -518,3 +518,263 @@
     padding: 0.3rem 0.8rem !important;
   }
 }
+
+.project-card-upcoming {
+  cursor: default;
+}
+
+.project-card-upcoming img {
+  filter: grayscale(20%);
+}
+
+.project-card-upcoming .project-overlay {
+  opacity: 1;
+}
+
+.project-card-category {
+  margin: 0 0 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.projects-page {
+          min-height: 100vh;
+          background: #ffffff;
+          padding: 4rem 0 6rem;
+        }
+
+        .projects-wrap {
+          width: min(980px, 92%);
+          margin: 0 auto;
+        }
+
+        .projects-heading {
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+
+        .projects-heading p {
+          margin: 0 0 0.4rem;
+          font-size: 0.7rem;
+          font-weight: 600;
+          letter-spacing: 0.35em;
+          color: #666;
+        }
+
+        .projects-heading h1 {
+          margin: 0;
+          font-size: clamp(2.5rem, 5vw, 4rem);
+          font-weight: 800;
+          letter-spacing: -0.04em;
+        }
+
+        .portfolio-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-auto-rows: 240px;
+          gap: 12px;
+        }
+
+        .portfolio-card {
+          position: relative;
+          display: block;
+          overflow: hidden;
+          border-radius: 7px;
+          background: #eee;
+          text-decoration: none;
+          color: inherit;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .portfolio-card img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+
+        .portfolio-card:hover img {
+          transform: scale(1.025);
+        }
+
+        /* Celestial Moon */
+        .project-one {
+          grid-column: 1 / 3;
+          grid-row: 1;
+        }
+
+        /* Lens & Lydia */
+        .project-two {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        /* Vietnamese Typography */
+        .project-three {
+          grid-column: 3;
+          grid-row: 1 / 3;
+        }
+
+        /* Vast Collective */
+        .project-four {
+          grid-column: 2;
+          grid-row: 2;
+        }
+
+        /* iAnna */
+        .project-five {
+          grid-column: 1;
+          grid-row: 3;
+        }
+
+        /* Penguin */
+        .project-six {
+          grid-column: 2 / 4;
+          grid-row: 3;
+        }
+
+        /* Upcoming */
+        .project-seven {
+          grid-column: 1 / 4;
+          grid-row: 4;
+        }
+
+        .project-hover {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: flex-end;
+          padding: 1.25rem;
+          background:
+            linear-gradient(
+              to top,
+              rgba(0, 0, 0, 0.7),
+              rgba(0, 0, 0, 0.05) 55%,
+              transparent
+            );
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .portfolio-card:hover .project-hover {
+          opacity: 1;
+        }
+
+        .project-hover p {
+          margin: 0 0 0.25rem;
+          color: rgba(255, 255, 255, 0.75);
+          font-size: 0.65rem;
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .project-hover h2 {
+          margin: 0;
+          color: white;
+          font-size: 1.25rem;
+          font-weight: 700;
+        }
+
+        .upcoming-card {
+          min-height: 200px;
+          background: #dedede;
+        }
+
+        .upcoming-card img {
+          opacity: 0;
+        }
+
+        .upcoming-content {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+
+        .upcoming-content h2 {
+          margin: 0;
+          color: #9d9d9d;
+          font-size: clamp(3.5rem, 8vw, 6rem);
+          line-height: 0.9;
+          font-weight: 800;
+          letter-spacing: -0.05em;
+        }
+
+        .upcoming-content p {
+          margin: 1rem 0 0;
+          color: #777;
+          font-size: 0.7rem;
+          font-weight: 600;
+          letter-spacing: 0.35em;
+        }
+
+        @media (max-width: 800px) {
+          .projects-page {
+            padding-top: 3rem;
+          }
+
+          .portfolio-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 230px;
+          }
+
+          .project-one,
+          .project-six,
+          .project-seven {
+            grid-column: 1 / 3;
+          }
+
+          .project-two,
+          .project-three,
+          .project-four,
+          .project-five {
+            grid-column: auto;
+            grid-row: auto;
+          }
+
+          .project-three {
+            min-height: 300px;
+          }
+        }
+
+        @media (max-width: 560px) {
+          .projects-wrap {
+            width: 94%;
+          }
+
+          .portfolio-grid {
+            grid-template-columns: 1fr;
+            grid-auto-rows: 220px;
+            gap: 10px;
+          }
+
+          .project-one,
+          .project-two,
+          .project-three,
+          .project-four,
+          .project-five,
+          .project-six,
+          .project-seven {
+            grid-column: 1;
+            grid-row: auto;
+          }
+
+          .project-three {
+            min-height: 280px;
+          }
+
+          .project-hover {
+            opacity: 1;
+          }
+
+          .upcoming-content h2 {
+            font-size: 3.5rem;
+          }
+        }
